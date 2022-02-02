@@ -1,0 +1,16 @@
+{% extends 'storeapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="col-sm-10">
+    <h3>Signup Page</h3>
+    <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {% for fm in form %}
+        <div class="form-group">
+        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}}
+    </div>
+        {% endfor %}
+        <input type="Submit" class="btn btn-primary mt-2" value="Submit">
+    </form>
+</div>
+{% endblock content %}
